@@ -29,13 +29,33 @@ namespace Data_Collector
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.grab_btn = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // grab_btn
+            // 
+            this.grab_btn.Location = new System.Drawing.Point(53, 33);
+            this.grab_btn.Name = "grab_btn";
+            this.grab_btn.Size = new System.Drawing.Size(110, 26);
+            this.grab_btn.TabIndex = 0;
+            this.grab_btn.Text = "Собрать данные";
+            this.grab_btn.UseVisualStyleBackColor = true;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(228, 94);
+            this.Controls.Add(this.grab_btn);
+            this.Name = "Form1";
+            this.Text = "Data Collector";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button grab_btn;
     }
 }
 
