@@ -40,6 +40,7 @@ namespace Data_Collector
             this.grab_btn.TabIndex = 0;
             this.grab_btn.Text = "Собрать данные";
             this.grab_btn.UseVisualStyleBackColor = true;
+            this.grab_btn.Click += new System.EventHandler(this.grab_btn_Click);
             // 
             // Form1
             // 
@@ -49,6 +50,7 @@ namespace Data_Collector
             this.Controls.Add(this.grab_btn);
             this.Name = "Form1";
             this.Text = "Data Collector";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.ResumeLayout(false);
 
         }

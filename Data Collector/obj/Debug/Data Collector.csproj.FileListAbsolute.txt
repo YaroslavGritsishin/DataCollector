@@ -1,0 +1,15 @@
+D:\VS2019\Data Collector\Data Collector\bin\Debug\Data Collector.exe.config
+D:\VS2019\Data Collector\Data Collector\bin\Debug\Data Collector.exe
+D:\VS2019\Data Collector\Data Collector\bin\Debug\Data Collector.pdb
+D:\VS2019\Data Collector\Data Collector\bin\Debug\EntityFramework.dll
+D:\VS2019\Data Collector\Data Collector\bin\Debug\EntityFramework.SqlServer.dll
+D:\VS2019\Data Collector\Data Collector\bin\Debug\EntityFramework.xml
+D:\VS2019\Data Collector\Data Collector\bin\Debug\EntityFramework.SqlServer.xml
+D:\VS2019\Data Collector\Data Collector\obj\Debug\Data Collector.csprojAssemblyReference.cache
+D:\VS2019\Data Collector\Data Collector\obj\Debug\Data_Collector.Form1.resources
+D:\VS2019\Data Collector\Data Collector\obj\Debug\Data_Collector.Properties.Resources.resources
+D:\VS2019\Data Collector\Data Collector\obj\Debug\Data Collector.csproj.GenerateResource.cache
+D:\VS2019\Data Collector\Data Collector\obj\Debug\Data Collector.csproj.CoreCompileInputs.cache
+D:\VS2019\Data Collector\Data Collector\obj\Debug\Data Collector.csproj.CopyComplete
+D:\VS2019\Data Collector\Data Collector\obj\Debug\Data Collector.exe
+D:\VS2019\Data Collector\Data Collector\obj\Debug\Data Collector.pdb
