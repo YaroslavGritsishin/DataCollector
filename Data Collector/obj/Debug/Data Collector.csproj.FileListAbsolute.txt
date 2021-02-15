@@ -13,3 +13,5 @@ D:\VS2019\Data Collector\Data Collector\obj\Debug\Data Collector.csproj.CoreComp
 D:\VS2019\Data Collector\Data Collector\obj\Debug\Data Collector.csproj.CopyComplete
 D:\VS2019\Data Collector\Data Collector\obj\Debug\Data Collector.exe
 D:\VS2019\Data Collector\Data Collector\obj\Debug\Data Collector.pdb
+D:\VS2019\Data Collector\Data Collector\bin\Debug\DocumentFormat.OpenXml.dll
+D:\VS2019\Data Collector\Data Collector\bin\Debug\DocumentFormat.OpenXml.xml

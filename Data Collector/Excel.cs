@@ -20,14 +20,20 @@ namespace Data_Collector
             this.ExApp = ExApp;
         }
 
-
         public override List<PointCoordinate> GetData()
         {
             List<PointCoordinate> result = new List<PointCoordinate>();
             try
             {
+                var DirectoriesPath = Directory.GetFiles("D:\\Отчетные документы").ToList();
+                //DirectoriesPath.Clear();
+                //for (int i = 88; i < 100; i++)
+                //{
+                    
+                //    DirectoriesPath.Add($"D:\\Отчетные документы\\Таблица к журналу_{i}-й цикл.xlsx");
+                //}
 
-                foreach (var a in Directory.GetFiles("D:\\Отчетные документы").ToList())
+                foreach (var a in DirectoriesPath)
                 {
                     var path = a.Substring(a.IndexOf('$') + 1);
                     Wb = ExApp.Workbooks.Open(path);
