@@ -104,8 +104,9 @@ namespace Data_Collector
                 Groups.TryGetValue(checkedListBox1.CheckedItems[i].ToString(), out res);
                 using (Context context = new Context())
                 {
-                    FirstMachCycle = context.pointCoordinates.FirstOrDefault(point => point.Name.StartsWith(res)).CycleNumber;
+                    FirstMachCycle = context.pointCoordinates.Where(point => point.Name.StartsWith(res)).OrderBy(point => point.CycleNumber).First().CycleNumber;
                 }
+                if (FirstMachCycle > endCycle) continue;
                 CopyTemplateFile(comboBox3, comboBox4, out HorizontalTemplatePath, out VerticalTemplatePath, checkedListBox1.CheckedItems[i].ToString());
                 for (; startCycle < endCycle + 1;)
                 {
