@@ -10,7 +10,7 @@ namespace Data_Collector
 {
     static public class WorkWithDB
     {
-        static public List<HorizontalPositionFormat> GetHorizontalPositionPoints (int cycleNuber, List<string> pointsName)
+        static public List<HorizontalPositionFormat> GetHorizontalPositionPoints(int cycleNuber, List<string> pointsName)
         {
             List<HorizontalPositionFormat> result = new List<HorizontalPositionFormat>();
             using (Context context = new Context())
@@ -76,24 +76,24 @@ namespace Data_Collector
             }
             return result;
         }
-        static public List<PositionCoordinate> GetVerticalPositionPoints (int cycleNuber, List<string> pointsName)
+        static public List<PositionCoordinate> GetVerticalPositionPoints(int cycleNuber, List<string> pointsName)
         {
             var result = new List<PositionCoordinate>();
 
-            using(Context context = new Context())
+            using (Context context = new Context())
             {
                 foreach (var name in pointsName)
                 {
                     var res1 = context.pointCoordinates.SingleOrDefault(point => point.Name == name & point.CycleNumber == cycleNuber);
-                    if(res1 != null)
+                    if (res1 != null)
                     {
-                        result.Add(new PositionCoordinate() 
+                        result.Add(new PositionCoordinate()
                         {
                             Name = name,
                             DataTime = res1.DateTime,
                             North = res1.North,
                             East = res1.East,
-                            NorthDiff  = res1.NorthDiff,
+                            NorthDiff = res1.NorthDiff,
                             EastDiff = res1.EastDiff,
                             Number = res1.CycleNumber
                         });
@@ -116,6 +116,187 @@ namespace Data_Collector
                 return result;
             }
         }
+        static public List<HorizontalElivationFormat> GetHorizontalElivationPoints(int cycleNuber, List<string> pointsName)
+        {
+            List<HorizontalElivationFormat> result = new List<HorizontalElivationFormat>();
 
+            foreach (var name in pointsName)
+            {
+                using (Context context = new Context())
+                {
+                    var first = context.pointCoordinates.SingleOrDefault(point => point.Name == name & point.CycleNumber == cycleNuber);
+                    var second = context.pointCoordinates.SingleOrDefault(point => point.Name == name & point.CycleNumber == cycleNuber + 1);
+                    var thrid = context.pointCoordinates.SingleOrDefault(point => point.Name == name & point.CycleNumber == cycleNuber + 2);
+                    var four = context.pointCoordinates.SingleOrDefault(point => point.Name == name & point.CycleNumber == cycleNuber + 3);
+                    var five = context.pointCoordinates.SingleOrDefault(point => point.Name == name & point.CycleNumber == cycleNuber + 4);
+                    var six = context.pointCoordinates.SingleOrDefault(point => point.Name == name & point.CycleNumber == cycleNuber + 5);
+
+                    if (six != null)
+                    {
+                        result.Add(new HorizontalElivationFormat()
+                        {
+                            Name = first.Name,
+                            FirstDateTime = first.DateTime,
+                            FirstHeight = first.Height,
+                            FirstDiffHeight = first.HeightDiff,
+                            SecondDateTime = second.DateTime,
+                            SecondHeight = second.Height,
+                            SecondDiffHeight = second.HeightDiff,
+                            ThridDateTime = thrid.DateTime,
+                            ThridHeight = thrid.Height,
+                            ThridDiffHeight = thrid.HeightDiff,
+                            FourDateTime = four.DateTime,
+                            FourHeight = four.Height,
+                            FourDiffHeight = four.HeightDiff,
+                            FiveDateTime = five.DateTime,
+                            FiveHeight = five.Height,
+                            FiveDiffHeight = five.HeightDiff,
+                            SixDateTime = six.DateTime,
+                            SixHeight = six.Height,
+                            SixDiffHeight = six.HeightDiff
+                        });
+                    }
+                    else if (five != null)
+                    {
+                        result.Add(new HorizontalElivationFormat()
+                        {
+                            Name = first.Name,
+                            FirstDateTime = first.DateTime,
+                            FirstHeight = first.Height,
+                            FirstDiffHeight = first.HeightDiff,
+                            SecondDateTime = second.DateTime,
+                            SecondHeight = second.Height,
+                            SecondDiffHeight = second.HeightDiff,
+                            ThridDateTime = thrid.DateTime,
+                            ThridHeight = thrid.Height,
+                            ThridDiffHeight = thrid.HeightDiff,
+                            FourDateTime = four.DateTime,
+                            FourHeight = four.Height,
+                            FourDiffHeight = four.HeightDiff,
+                            FiveDateTime = five.DateTime,
+                            FiveHeight = five.Height,
+                            FiveDiffHeight = five.HeightDiff,
+                        });
+                    }
+                    else if (four != null)
+                    {
+                        result.Add(new HorizontalElivationFormat()
+                        {
+                            Name = first.Name,
+                            FirstDateTime = first.DateTime,
+                            FirstHeight = first.Height,
+                            FirstDiffHeight = first.HeightDiff,
+                            SecondDateTime = second.DateTime,
+                            SecondHeight = second.Height,
+                            SecondDiffHeight = second.HeightDiff,
+                            ThridDateTime = thrid.DateTime,
+                            ThridHeight = thrid.Height,
+                            ThridDiffHeight = thrid.HeightDiff,
+                            FourDateTime = four.DateTime,
+                            FourHeight = four.Height,
+                            FourDiffHeight = four.HeightDiff,
+                        });
+                    }
+                    else if (thrid != null)
+                    {
+                        result.Add(new HorizontalElivationFormat()
+                        {
+                            Name = first.Name,
+                            FirstDateTime = first.DateTime,
+                            FirstHeight = first.Height,
+                            FirstDiffHeight = first.HeightDiff,
+                            SecondDateTime = second.DateTime,
+                            SecondHeight = second.Height,
+                            SecondDiffHeight = second.HeightDiff,
+                            ThridDateTime = thrid.DateTime,
+                            ThridHeight = thrid.Height,
+                            ThridDiffHeight = thrid.HeightDiff,
+                        });
+                    }
+                    else if (second != null)
+                    {
+                        result.Add(new HorizontalElivationFormat()
+                        {
+                            Name = first.Name,
+                            FirstDateTime = first.DateTime,
+                            FirstHeight = first.Height,
+                            FirstDiffHeight = first.HeightDiff,
+                            SecondDateTime = second.DateTime,
+                            SecondHeight = second.Height,
+                            SecondDiffHeight = second.HeightDiff,
+                        });
+                    }
+                    else if(first != null)
+                    {
+                        result.Add(new HorizontalElivationFormat()
+                        {
+                            Name = first.Name,
+                            FirstDateTime = first.DateTime,
+                            FirstHeight = first.Height,
+                            FirstDiffHeight = first.HeightDiff,
+                        });
+                    }
+                }
+            }
+           
+            return result;
+        }
+         static public List<VerticalElivationFormat> GetVerticalElivationPoints(int cycleNuber, List<string> pointsName)
+        {
+            List<VerticalElivationFormat> result = new List<VerticalElivationFormat>();
+
+            foreach (var name in pointsName)
+            {
+                using (Context context = new Context())
+                {
+                    var first = context.pointCoordinates.SingleOrDefault(point => point.Name == name & point.CycleNumber == cycleNuber);
+                    var second = context.pointCoordinates.SingleOrDefault(point => point.Name == name & point.CycleNumber == cycleNuber + 1);
+                    var thrid = context.pointCoordinates.SingleOrDefault(point => point.Name == name & point.CycleNumber == cycleNuber + 2);
+
+                    if (thrid != null)
+                    {
+                        result.Add(new VerticalElivationFormat()
+                        {
+                            Name = first.Name,
+                            FirstDateTime = first.DateTime,
+                            FirstHeight = first.Height,
+                            FirstDiffHeight = first.HeightDiff,
+                            SecondDateTime = second.DateTime,
+                            SecondHeight = second.Height,
+                            SecondDiffHeight = second.HeightDiff,
+                            ThridDateTime = thrid.DateTime,
+                            ThirdHeghit = thrid.Height,
+                            ThirdDiffHeight = thrid.HeightDiff
+
+                        });
+                    }
+                    else if (second != null)
+                    {
+                        result.Add(new VerticalElivationFormat()
+                        {
+                            Name = first.Name,
+                            FirstDateTime = first.DateTime,
+                            FirstHeight = first.Height,
+                            FirstDiffHeight = first.HeightDiff,
+                            SecondDateTime = second.DateTime,
+                            SecondHeight = second.Height,
+                            SecondDiffHeight = second.HeightDiff,
+                        });
+                    }
+                    else if (first != null)
+                    {
+                        result.Add(new VerticalElivationFormat()
+                        {
+                            Name = first.Name,
+                            FirstDateTime = first.DateTime,
+                            FirstHeight = first.Height,
+                            FirstDiffHeight = first.HeightDiff,
+                        });
+                    }
+                }
+            }
+
+            return result;
+        }
     }
 }
